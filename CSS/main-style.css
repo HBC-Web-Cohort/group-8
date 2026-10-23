@@ -127,7 +127,7 @@ img {
 .banner-style {
   margin-top: 100px;
   background:
-    linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+    linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)),
     url("../IMAGES/build.jpg");
   background-size: cover;
   background-position: center;
@@ -239,7 +239,7 @@ img {
 .about-us-banner {
   margin-top: 100px;
   background:
-    linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)),
     url(../IMAGES/about\ us.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -283,7 +283,7 @@ img {
 .services-banner {
   margin-top: 100px;
   background:
-    linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+    linear-gradient(to right, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.9)),
     url(../IMAGES/services.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -388,7 +388,7 @@ img {
 .team-banner {
   margin-top: 100px;
   background:
-    linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
+    linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)),
     url("../IMAGES/contact.jpg");
   background-size: cover;
   background-position: center;
