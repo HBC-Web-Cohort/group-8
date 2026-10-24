@@ -256,9 +256,6 @@ img {
 .overview-text {
   line-height: 2;
 }
-.why-choose-us {
-  background-color: #ecf7ff;
-}
 .about-grid-style {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
