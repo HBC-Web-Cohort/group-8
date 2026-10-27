@@ -1,11 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finesse Research & Managment Consulting Services Company</title>
-    <!-- title icon -->
-    <link rel="title icon" type="png" href="../IMAGES/final finesse logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="meta.about">About Us | Finesse</title>
+    <meta name="description" content="About Finesse Research & Management Consultancy Services Company." />
+    <link rel="icon" type="image/png" href="../IMAGES/web/logo-small.png" />
+    <script>
+      /* runs before the page paints: enables animations and applies the saved language direction */
+      (function () {
+        var d = document.documentElement;
+        d.classList.add("js");
+        try {
+          var l = localStorage.getItem("websiteLang");
+          if (l && l !== "en") {
+            d.lang = l;
+            d.dir = "rtl";
+          }
+        } catch (e) {}
+      })();
+    </script>
     <!-- css files -->
     <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
     <link
@@ -16,239 +30,241 @@
     <!-- script files -->
     <script src="../JS/jquery-3.7.1.slim.min.js" defer></script>
     <script src="../JS/bootstrap.bundle.min.js" defer></script>
+    <script src="../JS/i18n.js" defer></script>
     <script src="../JS/main-script.js" defer></script>
   </head>
   <body>
+    <div id="scrollProgress" aria-hidden="true"></div>
+
     <!-- navbar -->
-
-    <header
-      class="navbar navbar-expand-xl navbar-light p-3 shadow-sm fixed-top navbar-style"
-    >
-      <div class="navbar-brand-container">
-        <!-- Company Logo -->
-        <a href="#" class="logo-link">
-          <img
-            src="../IMAGES/final finesse logo.png"
-            alt="Finesse Company Logo"
-          />
-        </a>
-
-        <!-- Company Name -->
-        <a href="#" class="brand-text">
-          <span class="finesse-name">Finesse</span>
-          <span class="finesse-name-detail">
-            Research &amp; Management Consultancy Services Company
+    <header class="navbar navbar-expand-xl navbar-light fixed-top navbar-style" id="siteNav">
+      <div class="container-fluid">
+        <a href="../index.html" class="brand" aria-label="Finesse">
+          <img class="brand-logo" src="../IMAGES/web/logo-small.png" alt="Finesse Company Logo" width="37" height="52" />
+          <span class="brand-text">
+            <span class="finesse-name">Finesse</span>
+            <span class="finesse-name-detail" data-i18n="brand.detail"
+              >Research &amp; Management Consultancy Services Company</span
+            >
           </span>
         </a>
-      </div>
-      <button
-        data-target="#mynavbar"
-        data-toggle="collapse"
-        aria-label="Toggle Finesse Navbar"
-        aria-controls="#mynavbar"
-        aria-expanded="false"
-        class="navbar-toggler"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse p-3" id="mynavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item my-2 my-xl-0 mx-0 mx-xl-2">
-            <a href="../index.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item my-2 my-xl-0 mx-0 mx-xl-2 active">
-            <a href="about.html" class="nav-link">About</a>
-          </li>
-          <li class="nav-item my-2 my-xl-0 mx-0 mx-xl-2">
-            <a href="services.html" class="nav-link">Services</a>
-          </li>
-          <li class="nav-item my-2 my-xl-0 mx-0 mx-xl-2">
-            <a href="goal-&-abjectives.html" class="nav-link"
-              >Goal &amp; Objectives</a
-            >
-          </li>
-          <li class="nav-item my-2 my-xl-0 mx-0 mx-xl-2">
-            <a href="contact.html" class="nav-link">Contact</a>
-          </li>
-        </ul>
-        <a
-          href="contact.html"
-          class="btn btn-outline-primary header-btn ml-auto my-3 my-md-0"
-          >Get in Touch</a
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#mynavbar"
+          aria-controls="mynavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          data-i18n-al="nav.toggle"
         >
-         <!-- Theme Toggle Button -->
-        <div class="theme-toggle-wrapper">
-          <div class="custom-control custom-switch theme-switch">
-            <input
-              type="checkbox"
-              class="custom-control-input"
-              id="themeSwitch"
-              aria-label="Switch between light and dark themes"
-            />
-            <label class="custom-control-label" for="themeSwitch">
-              <span class="theme-icon sun-icon">
-                <i class="fas fa-sun"></i>
-              </span>
-              <span class="theme-icon moon-icon">
-                <i class="fas fa-moon"></i>
-              </span>
-            </label>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="services.html" class="nav-link" data-i18n="nav.services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="goals-objectives.html" class="nav-link" data-i18n="nav.goals">Goal &amp; Objectives</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+          </li>
+          </ul>
+          <div class="nav-tools">
+            <!-- language switcher: English (default), Persian, Pashto, Arabic -->
+            <div class="lang-switch" id="langSwitch">
+              <button
+                type="button"
+                class="lang-btn"
+                id="langBtn"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-label="Choose language"
+                data-i18n-al="lang.label"
+              >
+                <i class="fa-solid fa-globe"></i>
+                <span id="langCurrent">EN</span>
+                <i class="fa-solid fa-chevron-down lang-caret"></i>
+              </button>
+              <ul class="lang-menu" role="listbox" aria-label="Language">
+                <li role="presentation"><button type="button" class="lang-option selected" role="option" aria-selected="true" data-lang="en" lang="en">English <small>EN</small></button></li>
+                <li role="presentation"><button type="button" class="lang-option" role="option" aria-selected="false" data-lang="fa" lang="fa">فارسی <small>FA</small></button></li>
+                <li role="presentation"><button type="button" class="lang-option" role="option" aria-selected="false" data-lang="ps" lang="ps">پښتو <small>PS</small></button></li>
+                <li role="presentation"><button type="button" class="lang-option" role="option" aria-selected="false" data-lang="ar" lang="ar">العربية <small>AR</small></button></li>
+              </ul>
+            </div>
+            <!-- Theme Toggle Button -->
+            <div class="theme-toggle-wrapper">
+              <div class="custom-control custom-switch theme-switch">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="themeSwitch"
+                  aria-label="Switch between light and dark themes"
+                  data-i18n-al="theme.label"
+                />
+                <label class="custom-control-label" for="themeSwitch">
+                  <span class="theme-icon sun-icon"><i class="fas fa-sun"></i></span>
+                  <span class="theme-icon moon-icon"><i class="fas fa-moon"></i></span>
+                </label>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-primary header-btn" data-i18n="nav.cta">Get in Touch</a>
           </div>
         </div>
       </div>
     </header>
     <!-- end of navbar -->
-    <!-- banner -->
-    <div class="container-fluid about-us-banner">
-      <div class="container banner-container">
-        <h1 class="text-light my-5">About Us</h1>
-        <div class="about-links d-flex align-items-center">
-          <a href="../index.html" class="nav-link text-light mx-3">Home</a>
-          <span class="text-light">/</span>
-          <a href="about.html" class="nav-link text-light active mx-3"
-            >About US</a
-          >
+
+    <main>
+      <section class="about-us-banner">
+        <div class="container banner-container">
+          <h1 class="page-title" data-i18n="about.title">About Us</h1>
+          <nav class="about-links" aria-label="breadcrumb">
+            <a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a>
+            <span>/</span>
+            <a href="about.html" class="nav-link active" data-i18n="about.title">About Us</a>
+          </nav>
         </div>
-      </div>
-    </div>
-    <!-- end of banner  -->
-    <!-- company over view -->
-    <div class="container-fluid p-5">
-      <div class="row d-flex justify-content-center align-items-center overal">
-        <div class="col-xl-7">
-          <h1 class="my-5">Company Overview</h1>
-          <p class="text-muted text-left text-md-justify overview-text">
-            Finesse is a professional consulting firm specializing in research,
-            management, monitoring & evaluation, and capacity building
-            consulting company. We provide organizations, development partners,
-            and government agencies with evidence-based solutions, actionable
-            insights, and practical strategies to improve performance and
-            achieve sustainable impact. With a multidisciplinary team of
-            experts, Finesse combines rigorous research methodologies, strategic
-            advisory, and results-oriented evaluation frameworks to support
-            informed decision-making and organizational growth. Our services are
-            designed to be participatory, context-sensitive, and aligned with
-            international best practices, ensuring measurable outcomes and
-            long-term benefits for communities and organizations alike.
-          </p>
-        </div>
-        <div class="col-xl-5 text-center my-4 my-xl-0">
-          <div class="img-container">
-            <img
-              src="../IMAGES/company-overciew.jpg"
-              class="img-fluid"
-              alt=""
-            />
+      </section>
+
+      <!-- company overview -->
+      <section class="section">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-xl-7 mb-5 mb-xl-0 reveal">
+              <h2 class="section-title" data-i18n="about.ov.title">Company Overview</h2>
+              <p class="text-muted overview-text" data-i18n="about.ov.text">Finesse is a professional consulting firm specializing in research, management, monitoring &amp; evaluation, and capacity building consulting company. We provide organizations, development partners, and government agencies with evidence-based solutions, actionable insights, and practical strategies to improve performance and achieve sustainable impact. With a multidisciplinary team of experts, Finesse combines rigorous research methodologies, strategic advisory, and results-oriented evaluation frameworks to support informed decision-making and organizational growth. Our services are designed to be participatory, context-sensitive, and aligned with international best practices, ensuring measurable outcomes and long-term benefits for communities and organizations alike.</p>
+            </div>
+            <div class="col-xl-5">
+              <div class="photo-3d card3d reveal" data-tilt data-tilt-max="10" style="max-width: 520px">
+                <img class="pop-2" src="../IMAGES/company-overciew.jpg" alt="Consultants reviewing data together" width="661" height="360" />
+              </div>
+            </div>
           </div>
         </div>
+      </section>
+
+      <!-- why choose us -->
+      <section class="section section-alt">
+        <div class="container">
+          <h2 class="section-title reveal" data-i18n="why.title">Why Choose Us ?</h2>
+          <div class="about-grid-style mt-5">
+          <div class="about-cart card3d reveal" data-tilt>
+            <img class="badge-img pop" src="../IMAGES/web/badge-experience.png" alt="" />
+            <h6 class="pop-2" data-i18n="w1.t">Professional Experience</h6>
+            <p class="why-choose-us-text text-muted pop-3" data-i18n="w1.d">A strong track record of providing consultancy services across research, management, evaluation, strategy, and organizational development.</p>
+          </div>
+          <div class="about-cart card3d reveal" data-tilt>
+            <img class="badge-img pop" src="../IMAGES/web/badge-team.png" alt="" />
+            <h6 class="pop-2" data-i18n="w2.t">Highly Qualified and Multidisciplinary Team</h6>
+            <p class="why-choose-us-text text-muted pop-3" data-i18n="w2.d">A team of experienced professionals with diverse technical and sectoral expertise, enabling us to address complex challenges from multiple perspectives.</p>
+          </div>
+          <div class="about-cart card3d reveal" data-tilt>
+            <span class="icon-bubble pop"><i class="fa-solid fa-chart-line"></i></span>
+            <h6 class="pop-2" data-i18n="w3.t">Research, Management and Evaluation Expertise</h6>
+            <p class="why-choose-us-text text-muted pop-3" data-i18n="w3.d">Strong capabilities in research design, data collection and analysis, program management, monitoring, evaluation, and advisory services.</p>
+          </div>
+          <div class="about-cart card3d reveal" data-tilt>
+            <span class="icon-bubble pop"><i class="fa-solid fa-chart-pie"></i></span>
+            <h6 class="pop-2" data-i18n="w4.t">Data-Driven Decision Making</h6>
+            <p class="why-choose-us-text text-muted pop-3" data-i18n="w4.d">We use reliable data, rigorous analysis, and evidence-based methodologies to generate practical insights and support informed decision-making.</p>
+          </div>
+          <div class="about-cart card3d reveal" data-tilt>
+            <span class="icon-bubble pop"><i class="fa-solid fa-map-location-dot"></i></span>
+            <h6 class="pop-2" data-i18n="w5.t">Deep Local and Regional Understanding</h6>
+            <p class="why-choose-us-text text-muted pop-3" data-i18n="w5.d">Our knowledge of local realities, institutional environments, cultural dynamics, and regional contexts enables us to develop solutions that are relevant, practical, and context-sensitive.</p>
+          </div>
+          <div class="about-cart card3d reveal" data-tilt>
+            <span class="icon-bubble pop"><i class="fa-solid fa-puzzle-piece"></i></span>
+            <h6 class="pop-2" data-i18n="w6.t">Integrated Approach</h6>
+            <p class="why-choose-us-text text-muted pop-3" data-i18n="w6.d">We seamlessly connect research, strategy, management, implementation, and evaluation to ensure that our recommendations translate into practical results.</p>
+          </div>
+          <div class="about-cart card3d reveal" data-tilt>
+            <span class="icon-bubble pop"><i class="fa-solid fa-circle-check"></i></span>
+            <h6 class="pop-2" data-i18n="w7.t">Quality and Continuous Improvement</h6>
+            <p class="why-choose-us-text text-muted pop-3" data-i18n="w7.d">We apply structured quality assurance processes, performance monitoring, feedback mechanisms, and continuous improvement throughout every engagement.</p>
+          </div>
+          <div class="about-cart card3d reveal" data-tilt>
+            <span class="icon-bubble pop"><i class="fa-solid fa-handshake"></i></span>
+            <h6 class="pop-2" data-i18n="w8.t">Client-Centered Partnership</h6>
+            <p class="why-choose-us-text text-muted pop-3" data-i18n="w8.d">We work closely with our clients to understand their priorities, adapt our approach to their needs, and deliver solutions aligned with their strategic objectives.</p>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ad section -->
+      <section class="ad-section">
+        <div class="container reveal">
+          <h2 data-i18n="ad.2">Building Stronger Institutions Through Knowledge, Collaboration, and Sustainable Impact.</h2>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer-style">
+      <div class="container">
+        <div class="footer-grid-style">
+          <div class="footer-brand">
+            <a href="../index.html" class="logo-chip">
+              <img src="../IMAGES/web/logo.png" alt="Finesse Company Logo" />
+            </a>
+            <p class="footer-title">
+              <strong>FINESSE</strong>
+              <span data-i18n="brand.detail">Research &amp; Management Consultancy Services Company</span>
+            </p>
+          </div>
+          <div>
+            <h4 data-i18n="footer.links">Quick Links</h4>
+            <ul class="footer-links">
+            <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+            <li><a href="goals-objectives.html" data-i18n="nav.goals">Goal &amp; Objectives</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="contact-info">
+            <h4 data-i18n="footer.contact">Contact Info</h4>
+            <div class="ci-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span data-i18n="footer.loc">Kabul, Afghanistan</span>
+            </div>
+            <a href="mailto:finesse.researchmc@gmail.com" class="ci-row">
+              <i class="fa-solid fa-envelope"></i>
+              <span class="ltr-text">finesse.researchmc@gmail.com</span>
+            </a>
+            <a href="tel:+93786009699" class="ci-row">
+              <i class="fa-solid fa-phone"></i>
+              <span class="ltr-text">+93 78 600 9699</span>
+            </a>
+            <div class="social mt-4">
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Open Facebook" data-i18n-tt="social.fb" aria-label="Facebook"><img src="../IMAGES/icnos/facebook.png" alt="" /></a>
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Open LinkedIn" data-i18n-tt="social.li" aria-label="LinkedIn"><img src="../IMAGES/icnos/linkedin.png" alt="" /></a>
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Open WhatsApp" data-i18n-tt="social.wa" aria-label="WhatsApp"><img src="../IMAGES/icnos/whatsapp.png" alt="" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; <span id="year">2026</span> Finesse.
+          <span data-i18n="footer.rights">All rights reserved.</span>
+        </div>
       </div>
-    </div>
-    <!-- end of copmany over veiw -->
-    <!-- why choose us -->
-    <div class="container-fluid why-choose-us p-5">
-      <h1 class="text-primary my-5">Why Choose Us ?</h1>
-      <div class="row about-grid-style">
-        <!-- cart -->
-        <div class="about-cart p-3 overal">
-          <i class="fa fa-briefcase fa-3x text-primary"></i>
-          <h6 class="my-3">Professional Experience</h6>
-          <p class="why-choose-us-text text-muted text-justify">
-            A strong track record of providing consultancy services across
-            research, management, evaluation, strategy, and organizational
-            development.
-          </p>
-        </div>
-        <!-- end of cart -->
-        <!-- cart -->
-        <div class="about-cart p-3 overal">
-          <i class="fa fa-people-group fa-3x text-primary"></i>
-          <h6 class="my-3">Highly Qualified and Multidisciplinary Team</h6>
-          <p class="why-choose-us-text text-muted text-justify">
-            A team of experienced professionals with diverse technical and
-            sectoral expertise, enabling us to address complex challenges from
-            multiple perspectives.
-          </p>
-        </div>
-        <!-- end of cart -->
-        <!-- cart -->
-        <div class="about-cart p-3 overal">
-          <i class="fa fa-chart-line fa-3x text-primary"></i>
-          <h6 class="my-3">Research, Management and Evaluation Expertise</h6>
-          <p class="why-choose-us-text text-muted text-justify">
-            Strong capabilities in research design, data collection and
-            analysis, program management, monitoring, evaluation, and advisory
-            services.
-          </p>
-        </div>
-        <!-- end of cart -->
-        <!-- cart -->
-        <div class="about-cart p-3 overal">
-          <i class="fa fa-chart-pie fa-3x text-primary"></i>
-          <h6 class="my-3">Data-Driven Decision Making</h6>
-          <p class="why-choose-us-text text-muted text-justify">
-            We use reliable data, rigorous analysis, and evidence-based
-            methodologies to generate practical insights and support informed
-            decision-making.
-          </p>
-        </div>
-        <!-- end of cart -->
-        <!-- cart -->
-        <div class="about-cart p-3 overal">
-          <i class="fa fa-map-location-dot fa-3x text-primary"></i>
-          <h6 class="my-3">Deep Local and Regional Understanding</h6>
-          <p class="why-choose-us-text text-muted text-justify">
-            Our knowledge of local realities, institutional environments,
-            cultural dynamics, and regional contexts enables us to develop
-            solutions that are relevant, practical, and context-sensitive.
-          </p>
-        </div>
-        <!-- end of cart -->
-        <!-- cart -->
-        <div class="about-cart p-3 overal">
-          <i class="fa fa-puzzle-piece fa-3x text-primary"></i>
-          <h6 class="my-3">Integrated Approach</h6>
-          <p class="why-choose-us-text text-muted text-justify">
-            We seamlessly connect research, strategy, management,
-            implementation, and evaluation to ensure that our recommendations
-            translate into practical results.
-          </p>
-        </div>
-        <!-- end of cart -->
-        <!-- cart -->
-        <div class="about-cart p-3 overal">
-          <i class="fa-solid fa-circle-check fa-3x text-primary"></i>
-          <h6 class="my-3">Quality and Continuous Improvement</h6>
-          <p class="why-choose-us-text text-muted text-justify">
-            We apply structured quality assurance processes, performance
-            monitoring, feedback mechanisms, and continuous improvement
-            throughout every engagement.
-          </p>
-        </div>
-        <!-- end of cart -->
-        <!-- cart -->
-        <div class="about-cart p-3 overal">
-          <i class="fa fa-handshake fa-3x text-primary"></i>
-          <h6 class="my-3">Client-Centered Partnership</h6>
-          <p class="why-choose-us-text text-muted text-justify">
-            We work closely with our clients to understand their priorities,
-            adapt our approach to their needs, and deliver solutions aligned
-            with their strategic objectives.
-          </p>
-        </div>
-        <!-- end of cart -->
-      </div>
-    </div>
-    <!-- end of why choose us  -->
-    <!-- ad section -->
-    <section class="container-fluid ad-section p-5 overal">
-      <div class="container p-5 text-center text-light">
-        <h1>
-           Building Stronger Institutions Through Knowledge, Collaboration, and
-          Sustainable Impact.
-        </h1>
-      </div>
-    </section>
-    <!-- end of ad section -->
+    </footer>
+    <!-- end of footer -->
+
+    <button type="button" id="toTop" class="to-top" aria-label="Back to top" data-i18n-al="totop.label">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
   </body>
 </html>

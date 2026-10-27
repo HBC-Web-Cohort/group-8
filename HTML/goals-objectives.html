@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="meta.goals">Goals &amp; Objectives | Finesse</title>
+    <meta name="description" content="The goals and objectives that guide Finesse's work." />
+    <link rel="icon" type="image/png" href="../IMAGES/web/logo-small.png" />
+    <script>
+      /* runs before the page paints: enables animations and applies the saved language direction */
+      (function () {
+        var d = document.documentElement;
+        d.classList.add("js");
+        try {
+          var l = localStorage.getItem("websiteLang");
+          if (l && l !== "en") {
+            d.lang = l;
+            d.dir = "rtl";
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <!-- css files -->
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../CSS/main-style.css" />
+    <!-- script files -->
+    <script src="../JS/jquery-3.7.1.slim.min.js" defer></script>
+    <script src="../JS/bootstrap.bundle.min.js" defer></script>
+    <script src="../JS/i18n.js" defer></script>
+    <script src="../JS/main-script.js" defer></script>
+  </head>
+  <body>
+    <div id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- navbar -->
+    <header class="navbar navbar-expand-xl navbar-light fixed-top navbar-style" id="siteNav">
+      <div class="container-fluid">
+        <a href="../index.html" class="brand" aria-label="Finesse">
+          <img class="brand-logo" src="../IMAGES/web/logo-small.png" alt="Finesse Company Logo" width="37" height="52" />
+          <span class="brand-text">
+            <span class="finesse-name">Finesse</span>
+            <span class="finesse-name-detail" data-i18n="brand.detail"
+              >Research &amp; Management Consultancy Services Company</span
+            >
+          </span>
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#mynavbar"
+          aria-controls="mynavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          data-i18n-al="nav.toggle"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="services.html" class="nav-link" data-i18n="nav.services">Services</a>
+          </li>
+          <li class="nav-item active">
+            <a href="goals-objectives.html" class="nav-link" data-i18n="nav.goals">Goal &amp; Objectives</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+          </li>
+          </ul>
+          <div class="nav-tools">
+            <!-- language switcher: English (default), Persian, Pashto, Arabic -->
+            <div class="lang-switch" id="langSwitch">
+              <button
+                type="button"
+                class="lang-btn"
+                id="langBtn"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-label="Choose language"
+                data-i18n-al="lang.label"
+              >
+                <i class="fa-solid fa-globe"></i>
+                <span id="langCurrent">EN</span>
+                <i class="fa-solid fa-chevron-down lang-caret"></i>
+              </button>
+              <ul class="lang-menu" role="listbox" aria-label="Language">
+                <li role="presentation"><button type="button" class="lang-option selected" role="option" aria-selected="true" data-lang="en" lang="en">English <small>EN</small></button></li>
+                <li role="presentation"><button type="button" class="lang-option" role="option" aria-selected="false" data-lang="fa" lang="fa">فارسی <small>FA</small></button></li>
+                <li role="presentation"><button type="button" class="lang-option" role="option" aria-selected="false" data-lang="ps" lang="ps">پښتو <small>PS</small></button></li>
+                <li role="presentation"><button type="button" class="lang-option" role="option" aria-selected="false" data-lang="ar" lang="ar">العربية <small>AR</small></button></li>
+              </ul>
+            </div>
+            <!-- Theme Toggle Button -->
+            <div class="theme-toggle-wrapper">
+              <div class="custom-control custom-switch theme-switch">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="themeSwitch"
+                  aria-label="Switch between light and dark themes"
+                  data-i18n-al="theme.label"
+                />
+                <label class="custom-control-label" for="themeSwitch">
+                  <span class="theme-icon sun-icon"><i class="fas fa-sun"></i></span>
+                  <span class="theme-icon moon-icon"><i class="fas fa-moon"></i></span>
+                </label>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-primary header-btn" data-i18n="nav.cta">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end of navbar -->
+
+    <main>
+      <section class="goal-style">
+        <div class="container banner-container">
+          <h1 class="page-title" data-i18n="goalp.title">Goal &amp; Objectives</h1>
+          <nav class="about-links" aria-label="breadcrumb">
+            <a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a>
+            <span>/</span>
+            <a href="goals-objectives.html" class="nav-link active" data-i18n="goalp.title">Goal &amp; Objectives</a>
+          </nav>
+        </div>
+      </section>
+
+      <!-- goals -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <h2 class="section-title" data-i18n="goals.title">Goals</h2>
+            <p class="text-muted lead-p" data-i18n="goals.intro">Our goals guide our work and shape our long-term impact.</p>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-7">
+            <div class="goal-cart card3d reveal" data-tilt data-tilt-max="6">
+              <div class="num-container pop"><div class="goal-number" data-i18n="n1">1</div></div>
+              <div class="goal-desc pop-2">
+                <h5 data-i18n="g1.t">Strategic Advisory Excellence</h5>
+                <p class="text-muted" data-i18n="g1.d">Delivering high-quality, structured, and client-oriented consultancy services.</p>
+              </div>
+            </div>
+            <div class="goal-cart card3d reveal" data-tilt data-tilt-max="6">
+              <div class="num-container pop"><div class="goal-number" data-i18n="n2">2</div></div>
+              <div class="goal-desc pop-2">
+                <h5 data-i18n="g2.t">Evidence-Based Research &amp; Policy Support</h5>
+                <p class="text-muted" data-i18n="g2.d">Generate rigorous research and support evidence-based policy and decision-making processes.</p>
+              </div>
+            </div>
+            <div class="goal-cart card3d reveal" data-tilt data-tilt-max="6">
+              <div class="num-container pop"><div class="goal-number" data-i18n="n3">3</div></div>
+              <div class="goal-desc pop-2">
+                <h5 data-i18n="g3.t">Governance, Accountability &amp; Performance Improvement</h5>
+                <p class="text-muted" data-i18n="g3.d">Strengthen governance systems, accountability and organizational performance.</p>
+              </div>
+            </div>
+            <div class="goal-cart card3d reveal" data-tilt data-tilt-max="6">
+              <div class="num-container pop"><div class="goal-number" data-i18n="n4">4</div></div>
+              <div class="goal-desc pop-2">
+                <h5 data-i18n="g4.t">Capacity Development &amp; Inclusive Growth</h5>
+                <p class="text-muted" data-i18n="g4.d">Enhance institutional and human capacity through inclusive and sustainable development approaches.</p>
+              </div>
+            </div>
+            <div class="goal-cart card3d reveal" data-tilt data-tilt-max="6">
+              <div class="num-container pop"><div class="goal-number" data-i18n="n5">5</div></div>
+              <div class="goal-desc pop-2">
+                <h5 data-i18n="g5.t">Sustainable &amp; Impact-Oriented Solutions</h5>
+                <p class="text-muted" data-i18n="g5.d">Promote sustainable, practical, and impact-driven solutions across projects and interventions.</p>
+              </div>
+            </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+              <div class="goal-img-wrap">
+                <div class="photo-3d card3d reveal" data-tilt data-tilt-max="10" style="max-width: 380px">
+                  <img class="goal-img pop-2" src="../IMAGES/goal-lg.png" alt="An arrow hitting the centre of a target" width="780" height="1282" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- objectives -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="reveal">
+            <h2 class="section-title" data-i18n="obj.title">Objectives</h2>
+            <p class="text-muted lead-p" data-i18n="obj.text">Our objectives turn our goals into clear, practical commitments to the organizations and communities we serve.</p>
+          </div>
+          <div class="grid-services-style mt-5">
+            <div class="service-cart card3d reveal" data-tilt data-tilt-max="7">
+              <span class="service-icon pop"><i class="fa-solid fa-handshake"></i></span>
+              <div class="services-cart-disc pop-2">
+                <h6 data-i18n="o1.t">Quality Consultancy and Client-Centered Advisory Services</h6>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#objModal1" data-i18n="btn.more">Learn more</button>
+              </div>
+            </div>
+            <div class="service-cart card3d reveal" data-tilt data-tilt-max="7">
+              <span class="service-icon pop"><i class="fa-solid fa-magnifying-glass"></i></span>
+              <div class="services-cart-disc pop-2">
+                <h6 data-i18n="o2.t">Research Excellence and Evidence-Based Decision-Making</h6>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#objModal2" data-i18n="btn.more">Learn more</button>
+              </div>
+            </div>
+            <div class="service-cart card3d reveal" data-tilt data-tilt-max="7">
+              <span class="service-icon pop"><i class="fa-solid fa-scale-balanced"></i></span>
+              <div class="services-cart-disc pop-2">
+                <h6 data-i18n="o3.t">Governance, Accountability and Organizational Performance</h6>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#objModal3" data-i18n="btn.more">Learn more</button>
+              </div>
+            </div>
+            <div class="service-cart card3d reveal" data-tilt data-tilt-max="7">
+              <span class="service-icon pop"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
+              <div class="services-cart-disc pop-2">
+                <h6 data-i18n="o4.t">Monitoring, Evaluation and Organizational Learning</h6>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#objModal4" data-i18n="btn.more">Learn more</button>
+              </div>
+            </div>
+            <div class="service-cart card3d reveal" data-tilt data-tilt-max="7">
+              <span class="service-icon pop"><i class="fa-solid fa-users-gear"></i></span>
+              <div class="services-cart-disc pop-2">
+                <h6 data-i18n="o5.t">Capacity Development and Inclusive Participation</h6>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#objModal5" data-i18n="btn.more">Learn more</button>
+              </div>
+            </div>
+            <div class="service-cart card3d reveal" data-tilt data-tilt-max="7">
+              <span class="service-icon pop"><i class="fa-solid fa-seedling"></i></span>
+              <div class="services-cart-disc pop-2">
+                <h6 data-i18n="o6.t">Sustainable and Impact-Oriented Solutions</h6>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#objModal6" data-i18n="btn.more">Learn more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="goal-style cta-band">
+        <div class="container">
+          <h2 class="grad" data-i18n="goalp.cta">Turning Strategic Goals into Measurable Results and Sustainable Impact.</h2>
+        </div>
+      </section>
+    </main>
+    <div class="modal fade" id="objModal1" tabindex="-1" role="dialog" aria-labelledby="objModal1Title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-head">
+            <i class="fa-solid fa-handshake fa-xl"></i>
+            <h6 id="objModal1Title" data-i18n="modal.title">Description</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <h6 class="mb-3" data-i18n="o1.t">Quality Consultancy and Client-Centered Advisory Services</h6>
+            <hr />
+            <p class="text-muted mb-0" data-i18n="o1.d">Provide structured, high-quality, and context-driven consultancy and advisory services tailored to client needs, while ensuring effective quality assurance across all consultancy deliverables.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" data-i18n="btn.close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="objModal2" tabindex="-1" role="dialog" aria-labelledby="objModal2Title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-head">
+            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+            <h6 id="objModal2Title" data-i18n="modal.title">Description</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <h6 class="mb-3" data-i18n="o2.t">Research Excellence and Evidence-Based Decision-Making</h6>
+            <hr />
+            <p class="text-muted mb-0" data-i18n="o2.d">Conduct high-quality qualitative and quantitative research, produce relevant and actionable research outputs, and facilitate the effective use of evidence in policy, strategic, and managerial decision-making.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" data-i18n="btn.close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="objModal3" tabindex="-1" role="dialog" aria-labelledby="objModal3Title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-head">
+            <i class="fa-solid fa-scale-balanced fa-xl"></i>
+            <h6 id="objModal3Title" data-i18n="modal.title">Description</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <h6 class="mb-3" data-i18n="o3.t">Governance, Accountability and Organizational Performance</h6>
+            <hr />
+            <p class="text-muted mb-0" data-i18n="o3.d">Assess and strengthen governance and accountability frameworks and enhance organizational performance through structured assessments, evaluations, and effective management approaches.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" data-i18n="btn.close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="objModal4" tabindex="-1" role="dialog" aria-labelledby="objModal4Title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-head">
+            <i class="fa-solid fa-magnifying-glass-chart fa-xl"></i>
+            <h6 id="objModal4Title" data-i18n="modal.title">Description</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <h6 class="mb-3" data-i18n="o4.t">Monitoring, Evaluation and Organizational Learning</h6>
+            <hr />
+            <p class="text-muted mb-0" data-i18n="o4.d">Support the design and implementation of effective monitoring and evaluation (M&amp;E) systems to track performance, measure results, generate evidence, and support continuous organizational improvement.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" data-i18n="btn.close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="objModal5" tabindex="-1" role="dialog" aria-labelledby="objModal5Title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-head">
+            <i class="fa-solid fa-users-gear fa-xl"></i>
+            <h6 id="objModal5Title" data-i18n="modal.title">Description</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <h6 class="mb-3" data-i18n="o5.t">Capacity Development and Inclusive Participation</h6>
+            <hr />
+            <p class="text-muted mb-0" data-i18n="o5.d">Design and deliver capacity-building, training, and professional development programs that strengthen institutional and human competencies while promoting inclusive participation across target groups and development processes.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" data-i18n="btn.close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="objModal6" tabindex="-1" role="dialog" aria-labelledby="objModal6Title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-head">
+            <i class="fa-solid fa-seedling fa-xl"></i>
+            <h6 id="objModal6Title" data-i18n="modal.title">Description</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <h6 class="mb-3" data-i18n="o6.t">Sustainable and Impact-Oriented Solutions</h6>
+            <hr />
+            <p class="text-muted mb-0" data-i18n="o6.d">Integrate sustainability principles into projects and services and develop practical, context-sensitive, and impact-oriented solutions that generate measurable and long-term benefits for clients, institutions, and communities.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" data-i18n="btn.close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer class="footer-style">
+      <div class="container">
+        <div class="footer-grid-style">
+          <div class="footer-brand">
+            <a href="../index.html" class="logo-chip">
+              <img src="../IMAGES/web/logo.png" alt="Finesse Company Logo" />
+            </a>
+            <p class="footer-title">
+              <strong>FINESSE</strong>
+              <span data-i18n="brand.detail">Research &amp; Management Consultancy Services Company</span>
+            </p>
+          </div>
+          <div>
+            <h4 data-i18n="footer.links">Quick Links</h4>
+            <ul class="footer-links">
+            <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+            <li><a href="goals-objectives.html" data-i18n="nav.goals">Goal &amp; Objectives</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="contact-info">
+            <h4 data-i18n="footer.contact">Contact Info</h4>
+            <div class="ci-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span data-i18n="footer.loc">Kabul, Afghanistan</span>
+            </div>
+            <a href="mailto:finesse.researchmc@gmail.com" class="ci-row">
+              <i class="fa-solid fa-envelope"></i>
+              <span class="ltr-text">finesse.researchmc@gmail.com</span>
+            </a>
+            <a href="tel:+93786009699" class="ci-row">
+              <i class="fa-solid fa-phone"></i>
+              <span class="ltr-text">+93 78 600 9699</span>
+            </a>
+            <div class="social mt-4">
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Open Facebook" data-i18n-tt="social.fb" aria-label="Facebook"><img src="../IMAGES/icnos/facebook.png" alt="" /></a>
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Open LinkedIn" data-i18n-tt="social.li" aria-label="LinkedIn"><img src="../IMAGES/icnos/linkedin.png" alt="" /></a>
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Open WhatsApp" data-i18n-tt="social.wa" aria-label="WhatsApp"><img src="../IMAGES/icnos/whatsapp.png" alt="" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; <span id="year">2026</span> Finesse.
+          <span data-i18n="footer.rights">All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+    <!-- end of footer -->
+
+    <button type="button" id="toTop" class="to-top" aria-label="Back to top" data-i18n-al="totop.label">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </body>
+</html>
